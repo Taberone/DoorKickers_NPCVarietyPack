@@ -13,7 +13,7 @@ Possible "Class" field values:
 	- Shield
 -->
 
-	<!-- NPC Troopers -->
+	<!-- NPC Pointmen + Variations -->
 	<Entity name="TNPC_AI_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
@@ -49,6 +49,112 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
+	<Entity name="TNPC_AI_Shadow_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Low Threat Armor"/>
+			<Item name="SP01 Shadow Pistol"/>
+			<Item name="Crowbar"/>
+		</Equipment>
+		<Id name="Shadow Snake" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_pointman_pistol.png"
+			rifle="data/textures/humans/swat_pointman_rifle.png"
+			shotgun="data/textures/humans/swat_pointman_rifle.png"
+			weaponless="data/textures/humans/swat_pointman_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_pointman_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<Entity name="TNPC_AI_Colt_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Low Threat Armor"/>
+			<Item name="1911 Pistol"/>
+			<Item name="Crowbar"/>
+		</Equipment>
+		<Id name="Colt Caesar" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_pointman_pistol.png"
+			rifle="data/textures/humans/swat_pointman_rifle.png"
+			shotgun="data/textures/humans/swat_pointman_rifle.png"
+			weaponless="data/textures/humans/swat_pointman_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_pointman_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<Entity name="TNPC_AI_FSAP_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Low Threat Armor"/>
+			<Item name="FS AP Pistol"/>
+			<Item name="Crowbar"/>
+		</Equipment>
+		<Id name="Piercing Pearce" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_pointman_pistol.png"
+			rifle="data/textures/humans/swat_pointman_rifle.png"
+			shotgun="data/textures/humans/swat_pointman_rifle.png"
+			weaponless="data/textures/humans/swat_pointman_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_pointman_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<!-- NPC Assaulters + Variations -->
 	<Entity name="TNPC_AI_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
@@ -84,6 +190,112 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
+	<Entity name="TNPC_AI_X635_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Raider Vest"/>
+			<Item name="X635 PDW"/>
+			<Item name="Crowbar"/>
+		</Equipment>
+		<Id name="PDW Pablo" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_assaulter_pistol.png"
+			rifle="data/textures/humans/swat_assaulter_rifle.png"
+			shotgun="data/textures/humans/swat_assaulter_rifle.png"
+			weaponless="data/textures/humans/swat_assaulter_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_assaulter_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<Entity name="TNPC_AI_Bren_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Assaulter Vest"/>
+			<Item name="Bren A1 Assault Rifle"/>
+			<Item name="Crowbar"/>
+		</Equipment>
+		<Id name="Bren Ben" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_assaulter_pistol.png"
+			rifle="data/textures/humans/swat_assaulter_rifle.png"
+			shotgun="data/textures/humans/swat_assaulter_rifle.png"
+			weaponless="data/textures/humans/swat_assaulter_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_assaulter_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<Entity name="TNPC_AI_MK17_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Front Plate Only"/>
+			<Item name="Mk 17 Long Barrel"/>
+			<Item name="Crowbar"/>
+		</Equipment>
+		<Id name="Marked Mike" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_assaulter_pistol.png"
+			rifle="data/textures/humans/swat_assaulter_rifle.png"
+			shotgun="data/textures/humans/swat_assaulter_rifle.png"
+			weaponless="data/textures/humans/swat_assaulter_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_assaulter_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<!-- NPC Breachers + Variations -->
 	<Entity name="TNPC_AI_Breacher" type="Human" subType="Friendly" class="Breacher" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
@@ -117,5 +329,111 @@ Possible "Class" field values:
 		</OffscreenIndicator>
 		<RenderObject2D layer="10"/>
 	</Entity>
+	
+	<Entity name="TNPC_AI_JCS_Breacher" type="Human" subType="Friendly" class="Breacher" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Assaulter Vest"/>
+			<Item name="Joint Combat Shotgun"/>
+		</Equipment>
+		<Id name="Joint Jack" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_breacher_pistol.png"
+			rifle="data/textures/humans/swat_breacher_shotgun.png"
+			shotgun="data/textures/humans/swat_breacher_shotgun.png"
+			weaponless="data/textures/humans/swat_breacher_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_assaulter_deaths.dds"
+		/>
+
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<!-- NPC Stealthers + Variations -->
+	<Entity name="TNPC_AI_Stealth" type="Human" subType="Friendly" class="Stealth" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Raider Vest"/>
+			<Item name="Mp5A3-SD SMG"/>
+			<Item name="Lockpick"/>
+		</Equipment>
+		<Id name="Stealth Sean" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_stealth_pistol.png"
+			rifle="data/textures/humans/swat_stealth_rifle.png"
+			shotgun="data/textures/humans/swat_stealth_rifle.png"
+			weaponless="data/textures/humans/swat_stealth_weaponless.png"
+			legs="data/textures/humans/swat_legs.png"
+			death="data/textures/humans/swat_stealth_deaths.dds"
+		/>
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+
+	<!-- NPC Shielders + Variations -->
+	<Entity name="TNPC_AI_Shield" type="Human" subType="Friendly" class="Shield" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="45" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Low Threat Armor"/>
+			<Item name="Enforcer Shield (Level IIIA)"/>
+			<Item name="G17 Pistol (One Hand)"/>
+		</Equipment>
+		<Id name="Shield Shaw" portrait="data/textures/gui/customization/portraits/friendly_vip_crop.tga"/>
+
+		<Behavior defaultState="default" defaultActivity="ACTP_ENGAGE_ENEMY">
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="1">
+						<Activity type="ACTP_ENGAGE_ENEMY"/>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
+
+		<Skin
+			pistol="data/textures/humans/swat_shield_pistol.png"
+			rifle="data/textures/humans/swat_shield_pistol.png"
+			shotgun="data/textures/humans/swat_shield_pistol.png"
+			weaponless="data/textures/humans/swat_shield_weaponless.png"
+			legs="data/textures/humans/swat_shield_legs.png"
+			death="data/textures/humans/swat_shield_deaths.dds"
+		/>
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_hostage.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+	</Entity>
+	
+	<!-- Hostages, Unarmed VIPs, turncoat Terrorists -->
 	
 </Entities>
