@@ -29,6 +29,8 @@ Example:
 	<ObjectLibrary>
 		<!--<MountFile name="data/object_library/sound_entities_modtemplate.xml"/>-->
 		<MountFile name="data/object_library/taberone_friendly.xml"/>
+		<MountFile name="data/object_library/taberone_enemy.xml"/>
+		<MountFile name="data/object_library/taberone_pistols.xml"/>
 	</ObjectLibrary>
 
 	<Maps>
