@@ -14,7 +14,7 @@ Possible "Class" field values:
 -->
 
 	<!-- NPC Pointmen + Variations -->
-	<Entity name="TNPC_AI_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -49,7 +49,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_Shadow_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Shadow" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -84,7 +84,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_Colt_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_1911" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -119,7 +119,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_FSAP_Pointman" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_FSAP" type="Human" subType="Friendly" class="Pointman" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -155,7 +155,7 @@ Possible "Class" field values:
 	</Entity>
 	
 	<!-- NPC Assaulters + Variations -->
-	<Entity name="TNPC_AI_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Assaulter" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -190,7 +190,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_X635_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_X635" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -225,7 +225,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_Bren_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Bren" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -260,7 +260,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_MK17_Assault" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_MK17" type="Human" subType="Friendly" class="Assaulter" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -296,7 +296,7 @@ Possible "Class" field values:
 	</Entity>
 	
 	<!-- NPC Breachers + Variations -->
-	<Entity name="TNPC_AI_Breacher" type="Human" subType="Friendly" class="Breacher" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Breacher" type="Human" subType="Friendly" class="Breacher" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -330,7 +330,7 @@ Possible "Class" field values:
 		<RenderObject2D layer="10"/>
 	</Entity>
 	
-	<Entity name="TNPC_AI_JCS_Breacher" type="Human" subType="Friendly" class="Breacher" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_JCS_Breacher" type="Human" subType="Friendly" class="Breacher" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -365,7 +365,7 @@ Possible "Class" field values:
 	</Entity>
 	
 	<!-- NPC Stealthers + Variations -->
-	<Entity name="TNPC_AI_Stealth" type="Human" subType="Friendly" class="Stealth" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Stealth" type="Human" subType="Friendly" class="Stealth" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>
@@ -400,7 +400,7 @@ Possible "Class" field values:
 	</Entity>
 
 	<!-- NPC Shielders + Variations -->
-	<Entity name="TNPC_AI_Shield" type="Human" subType="Friendly" class="Shield" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="45" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
+	<Entity name="AI_Shield" type="Human" subType="Friendly" class="Shield" isVIP="true" startInactive="false" proximityActivation="false" fogOfWarVisibility="full" sizeX="45" sizeY="45" bboxOffsetX="0" bboxOffsetY="0" tooltip="Friendly Officer">
 		<FieldOfView degrees="90" eyeRadiusMeters="0.7" rangeMeters="99999"/>
 		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
 		<Equipment>

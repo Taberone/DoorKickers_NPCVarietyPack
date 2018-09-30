@@ -1,0 +1,89 @@
+<!--
+Possible "inventory" field values:
+	- PrimaryWeapon
+	- SecondaryWeapon
+	- Armor
+	- UtilityPouch
+	- SupportGear (use SupportGear1/2/3 for exclusive items, like for camera/hammer/lockpickmachine)
+
+Possible "Class" field values:
+	- Pointman
+	- Assault
+	- Breacher
+	- Stealth
+	- Shield
+	- PointmanEnemy
+	- AssaultEnemy
+
+Possible "category" field values:
+	This is currently used to discern between weapon classes. Needed for doctrine abilities and some actions, like we can only breach a door with shotguns.
+	Also used for weapon stats.
+	- pistol/rifle/shotgun/tazer
+
+You can add fovDegrees="xx" to ANY item in the <ModifiableParams> list in order to modify the base FOV.
+-->
+
+<!-- all time settings are in milliseconds, unless name says otherwise -->
+<Equipment>
+<Firearm name="Magnum (.44 Special)" inventoryBinding="SecondaryWeapon" category="pistol" tooltip="Magnum (.44 Special)">
+		<Class value="PointmanEnemy"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Skin binding="pistol"/>
+
+		<ModifiableParams
+			muzzleDropDistanceMeters="0.26"
+			numPellets="1"
+			roundsPerMagazine="6"
+			roundsPerSecond="4.0"
+			damagePerBullet="13"
+			armorPiercingLevel="4"
+			spreadAt10Meters="0.3"
+			silenced="0"
+			shotSoundMeters="30"
+			closedBolt="0"
+
+			cyclicReload="0"
+			reloadTime="5000"
+			reloadEmptyTime="5000"
+			changeInTime="850"
+			changeOutTime="700"
+			readyTime="110"
+			guardTime="50"
+		/>
+
+		<Params
+			caliberInfoText="@firearm_caliber_44mag_name"
+			operationInfoText="@firearm_operation_doubleactionrev_name"
+			ejectingShells="false"
+		/>
+
+		<AttackTypes>
+			<AttackType name="RapidFire"/>
+			<AttackType name="PistolAimedFireLong"/>
+			<AttackType name="PistolAimedFireLongXX"/>
+		</AttackTypes>
+
+		<MuzzleFlash muzzlePointOffset="20 -3" textureAnimation="ANIM_FX_MUZZLE_FLASH_SW">
+			<BulletTrace durationMSec="550">
+				<RenderObject2D texture="data/textures/fx/bullet_trace.dds" sizeX="512" sizeY="8" blendMode="add_masked"/>
+			</BulletTrace>
+			<Flares>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare1.tga" sizeX="200" sizeY="200" layer="11" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare2.tga" sizeX="200" sizeY="200" layer="11" blendMode="add"/>
+				<RenderObject2D texture="data/textures/fx/muzzle_flash_flare3.tga" sizeX="200" sizeY="200" layer="11" blendMode="add"/>
+			</Flares>
+		</MuzzleFlash>
+
+		<!-- max 4 variants for each action -->
+		<Sounds>
+			<Equip name="SFX_1911_EQUIP"/>
+			<Unequip name="SFX_1911_UNEQP"/>
+			<Reload name="SFX_REV38_RELD"/>
+			<ReloadEmpty name="SFX_REV38_RELD"/>
+			<FireSingle name="SFX_MAG44_FIRE"/>
+			<FireSingle name="SFX_MAG44_FIREa"/>
+			<FireRapid name="SFX_MAG44_FIRE"/>
+			<FireRapid name="SFX_MAG44_FIREa"/>
+		</Sounds>
+	</Firearm>
+</Equipment>
