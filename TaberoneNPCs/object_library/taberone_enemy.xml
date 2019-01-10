@@ -67,10 +67,6 @@ Possible "Class" field values:
 									</Properties>
 								</Activity>
 
-								<Activity type="ACT_DISPOSE_OF_DOPE" >
-									<Properties runSpeedModifierPercent="70">
-									</Properties>
-								</Activity>
 
 							</Set>
 
@@ -238,6 +234,359 @@ Possible "Class" field values:
 
 		</Behavior>
 
+	</Entity>
+	
+	<Entity name="Enemy_MacheteMike" type="Human" subType="Enemy" class="EnemyPointman" fogOfWarVisibility="hidden" sizeX="45" sizeY="40" bboxOffsetX="0" bboxOffsetY="0"	tooltip="Suspect (Machete)"> <!-- Action Squad enemy. -->
+		<FieldOfView degrees="90" eyeRadiusMeters="2" rangeMeters="99999"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Equipment>
+			<Item name="Machete"/>
+		</Equipment>
+		<Id name="Machete Mike" portrait="data/textures/gui/customization/portraits/enemy_harry.tga"/>
+		<Skin
+			pistol="data/textures/humans/enemy_junkieharry_pistol.dds"
+			rifle="data/textures/humans/enemy_junkieharry_pistol.dds"
+			shotgun="data/textures/humans/enemy_junkieharry_pistol.dds"
+			weaponless="data/textures/humans/enemy_junkieharry_weaponless.dds"
+			legs="data/textures/humans/enemy_junkieharry_legs.dds"
+			death="data/textures/humans/enemy_junkieharry_deaths.dds"
+		/>
+		<OffscreenIndicator>
+			<RenderObject2D texture="data/textures/gui/menus/menu_brief_badguy.tga"/>
+		</OffscreenIndicator>
+		<RenderObject2D layer="10"/>
+		<Behavior defaultState="default" defaultActivity="ACT_IDLE">
+            <PointsOfInterest lookAtTimeSec="1" lookAtMinDistMeters="2">
+				<POI type="Door" />
+				<POI type="Human" />
+            </PointsOfInterest>
+			<State name="default">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_SETUP_DEFAULT_ACTIVITY" priority="0">
+						<Activity type="ACT_IDLE"/>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_IDLE_TICK" priority="1">
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_SUSPICIOUS_DOOR_SOUND" priority="2">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="SUSPICIOUS">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_DISPOSE_OF_DOPE" >
+							<Properties runSpeedModifierPercent="100" minReactDistanceMeters="3">
+							</Properties>
+						</Activity>
+					    <Activity type="ACT_SET_STATE" interruptible="1" exclusive="1" runOnce="0">
+							<Properties state="breaking_things"/>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_HEAR_COMBAT" priority="3">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="SUSPICIOUS">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_DISPOSE_OF_DOPE" >
+							<Properties runSpeedModifierPercent="100" minReactDistanceMeters="3">
+							</Properties>
+						</Activity>
+					    <Activity type="ACT_SET_STATE" interruptible="1" exclusive="1" runOnce="0">
+							<Properties state="breaking_things"/>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_SEE_COMBAT" priority="4">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_GOTO_LOCATION" interruptible="1">
+							<Properties minDistanceMeters="30.0">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SCAN_VISUAL" interruptible="1">
+							<Properties waitTime="0.5" angleLeft="45.0" angleRight="45.0" transitionWaitTime="0.5">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_DISPOSE_OF_DOPE" >
+							<Properties runSpeedModifierPercent="100" minReactDistanceMeters="3">
+							</Properties>
+						</Activity>
+					    <Activity type="ACT_SET_STATE" interruptible="1" exclusive="1" runOnce="0">
+							<Properties state="breaking_things"/>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_SAW_DOOR_OPEN" priority="5">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="SUSPICIOUS">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_WAIT" interruptible="1">
+							<Properties waitTime="0.4">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_GOTO_LOCATION" interruptible="1">
+							<Properties minDistanceMeters="30.0">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SCAN_VISUAL" interruptible="1">
+							<Properties waitTime="0.5" angleLeft="45.0" angleRight="45.0" transitionWaitTime="0.5">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_DISPOSE_OF_DOPE" >
+							<Properties runSpeedModifierPercent="100" minReactDistanceMeters="3">
+							</Properties>
+						</Activity>
+					    <Activity type="ACT_SET_STATE" interruptible="1" exclusive="1" runOnce="0">
+							<Properties state="breaking_things"/>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_FRIENDLY_SNIPER_SHOT" priority="6">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_HIDE_FROM_SIGHT" interruptible="1">
+                            <Properties runSpeedModifierPercent="100">
+                            </Properties>
+						</Activity>
+						<Activity type="ACT_WAIT" interruptible="1">
+							<Properties waitTime="15.0">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_SAW_ENEMY_VIP" priority="6">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INTERCEPT_VIP" interruptible="1">
+                            <Properties runSpeedModifierPercent="25">
+                            </Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_TAKING_DAMAGE" priority="7">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_VISUAL_ENEMY_IN_VIEW" priority="8">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_ENGAGE_ENEMY" interruptible="1">
+                            <Properties runSpeedModifierPercent="100" waitTimeInCoverSec="0" chanceToGoToCoverPercent="0" tryFindingCoverTimeSec="100"
+							            goToCoverWhenReloading="false" goToCoverWhileAttacking="false" goToTarget="true" moveFromCurrentCover="true"
+										chanceToGoToTargetPercent="100" maxDistanceToTargetMeters="1" tryGoingToTargetTimeSec="0.1">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_VISUAL_ENEMY_OUT_OF_VIEW" priority="9">
+						<Activity type="ACT_SET_PRIORITY" interruptible="1">
+							<Properties priority="8">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_GOTO_LOCATION" interruptible="1">
+							<Properties minDistanceMeters="30.0">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_ENEMY_KILLED" priority="10">
+						<Activity type="ACT_SET_PRIORITY" interruptible="1">
+							<Properties priority="3">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SCAN_VISUAL" interruptible="1">
+							<Properties waitTime="0.5" angleLeft="45.0" angleRight="45.0" transitionWaitTime="0.5">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_DISPOSE_OF_DOPE" >
+							<Properties runSpeedModifierPercent="100" minReactDistanceMeters="3">
+							</Properties>
+						</Activity>
+					    <Activity type="ACT_SET_STATE" interruptible="1" exclusive="1" runOnce="0">
+							<Properties state="breaking_things"/>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_BLOCKING_LOS" priority="11">
+						<Activity type="ACT_MOVE_OUT_OF_LOS" >
+						</Activity>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+			<State name="breaking_things">
+				<ActivityBindingTable>
+					<ActivityBinding eventName="TYPE_AI_IDLE_TICK" priority="1">
+						<Activity type="ACT_DISPOSE_OF_DOPE" >
+							<Properties runSpeedModifierPercent="100" minReactDistanceMeters="3">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_HEAR_COMBAT" priority="3">
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_SEE_COMBAT" priority="4">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_GOTO_LOCATION" interruptible="1">
+							<Properties minDistanceMeters="30.0">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SCAN_VISUAL" interruptible="1">
+							<Properties waitTime="0.5" angleLeft="45.0" angleRight="45.0" transitionWaitTime="0.5">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_SAW_DOOR_OPEN" priority="5">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="SUSPICIOUS">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_WAIT" interruptible="1">
+							<Properties waitTime="0.4">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+							<Properties minDistanceMeters="30">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_GOTO_LOCATION" interruptible="1">
+							<Properties minDistanceMeters="30.0">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SCAN_VISUAL" interruptible="1">
+							<Properties waitTime="0.5" angleLeft="45.0" angleRight="45.0" transitionWaitTime="0.5">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_FRIENDLY_SNIPER_SHOT" priority="6">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_HIDE_FROM_SIGHT" interruptible="1">
+                            <Properties runSpeedModifierPercent="100">
+                            </Properties>
+						</Activity>
+						<Activity type="ACT_WAIT" interruptible="1">
+							<Properties waitTime="15.0">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_SAW_ENEMY_VIP" priority="6">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INTERCEPT_VIP" interruptible="1">
+                            <Properties runSpeedModifierPercent="25">
+                            </Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_TAKING_DAMAGE" priority="7">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_INVESTIGATE_VISUAL" >
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_VISUAL_ENEMY_IN_VIEW" priority="8">
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_ENGAGE_ENEMY" interruptible="1">
+                            <Properties runSpeedModifierPercent="100" waitTimeInCoverSec="0" chanceToGoToCoverPercent="0" tryFindingCoverTimeSec="100"
+							            goToCoverWhenReloading="false" goToCoverWhileAttacking="false" goToTarget="true" moveFromCurrentCover="true"
+										chanceToGoToTargetPercent="100" maxDistanceToTargetMeters="1" tryGoingToTargetTimeSec="0.1">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_VISUAL_ENEMY_OUT_OF_VIEW" priority="9">
+						<Activity type="ACT_SET_PRIORITY" interruptible="1">
+							<Properties priority="8">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_GOTO_LOCATION" interruptible="1">
+							<Properties minDistanceMeters="30.0">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+					
+					<ActivityBinding eventName="TYPE_AI_ENEMY_KILLED" priority="10">
+						<Activity type="ACT_SET_PRIORITY" interruptible="1">
+							<Properties priority="3">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SET_HUMAN_STATE" >
+							<Properties state="ALERTED">
+							</Properties>
+						</Activity>
+						<Activity type="ACT_SCAN_VISUAL" interruptible="1">
+							<Properties waitTime="0.5" angleLeft="45.0" angleRight="45.0" transitionWaitTime="0.5">
+							</Properties>
+						</Activity>
+					</ActivityBinding>
+
+					<ActivityBinding eventName="TYPE_AI_BLOCKING_LOS" priority="11">
+						<Activity type="ACT_MOVE_OUT_OF_LOS" >
+						</Activity>
+					</ActivityBinding>
+				</ActivityBindingTable>
+			</State>
+		</Behavior>
 	</Entity>
 	
 	<!-- Nameless Thug Variants -->

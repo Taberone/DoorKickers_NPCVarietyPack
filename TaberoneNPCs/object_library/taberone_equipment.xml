@@ -1,0 +1,36 @@
+<Equipment>
+<Firearm name="Machete" inventoryBinding="SecondaryWeapon" category="pistol">
+		<Class value="PointmanEnemy"/>
+		<MobilityModifiers moveSpeedLocalModifierPercent="0" turnSpeedLocalModifierPercent="0"/>
+		<Skin binding="pistol"/>
+		<ModifiableParams
+			muzzleDropDistanceMeters="1.06"
+			numPellets="1"
+			roundsPerMagazine="1"
+			roundsPerSecond="1"
+			damagePerBullet="6"
+			armorPiercingLevel="5"
+			spreadAt10Meters="0"
+			silenced="0"
+			shotSoundMeters="10"
+			closedBolt="0"
+
+			cyclicReload="0"
+			reloadTime="350"
+			reloadEmptyTime="350"
+			changeInTime="350"
+			changeOutTime="150"
+			readyTime="350"
+			guardTime="150"
+		/>
+		<Params
+			ejectingShells="false"
+		/>
+		<AttackTypes>
+			<AttackType name="Machete_Swing"/>
+		</AttackTypes>
+		<Sounds>
+			<FireSingle name="MACHETE_HIT"/>
+		</Sounds>
+	</Firearm>
+</Equipment>

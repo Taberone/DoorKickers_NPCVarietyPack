@@ -1,0 +1,17 @@
+<FirearmAttackTypes>
+	<AttackType name="Machete_Swing">
+		<ModifiableParams
+			minDistanceMeters="0"
+			maxDistanceMeters="1.5"
+			priority="3"
+			minAimTime="0"
+			maxAimTime="0"
+			minShots="1"
+			maxShots="1"
+			accuracyModifierPercent="100"
+			followupShotAccuracyBonusPercent="0"
+			followupShotTime="0"
+			resetTime="0"
+		/>
+	</AttackType>
+</FirearmAttackTypes>

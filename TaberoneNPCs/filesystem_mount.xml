@@ -31,6 +31,8 @@ Example:
 		<MountFile name="data/object_library/taberone_friendly.xml"/>
 		<MountFile name="data/object_library/taberone_enemy.xml"/>
 		<MountFile name="data/object_library/taberone_pistols.xml"/>
+		<MountFile name="data/object_library/taberone_attacktypes.xml"/>
+		<MountFile name="data/object_library/taberone_equipment.xml"/>
 	</ObjectLibrary>
 
 	<Maps>
@@ -46,7 +48,7 @@ Example:
 	</Campaigns>
 	
 	<Sounds>
-		<!-- add more here -->
+		<MountFile name="data/object_library/taberone_sounds.xml"/>
 	</Sounds>
 
 	<GUI>
