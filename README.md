@@ -6,6 +6,8 @@ Door Kickers that adds in NPC allies and new variations of existing enemies
 
 **Tackdriver Thug:** Nameless Thug with an AK
 
+**Machete Mike:** Attacks with a machete.
+
 ## Friendlies
 
 WIP
